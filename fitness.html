@@ -70,4 +70,36 @@
 <body>
     <div class="login-container">
         <h1>Login</h1>
-        <form id="logi
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+            <div id="error-message" class="error-message"></div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+
+            // Basic validation
+            if (username === '' || password === '') {
+                errorMessage.textContent = 'Please fill in both fields.';
+            } else {
+                errorMessage.textContent = '';
+                // Here you would typically handle the form submission,
+                // like sending the data to a server for authentication
+                alert('Form submitted!');
+            }
+        });
+    </script>
+</body>
+</html>
