@@ -3,17 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+    <title>Simple Notepad</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
-            color: #333;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .toolbar {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .toolbar button {
+            background-color: #555;
+            border: none;
+            color: white;
+            padding: 10px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        .toolbar button:hover {
+            background-color: #777;
+        }
+        .editor {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            resize: none;
+            width: 100%;
+            height: calc(100vh - 50px);
+            box-sizing: border-box;
         }
     </style>
 </head>
