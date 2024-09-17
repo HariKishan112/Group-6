@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Notepad</title>
-    <style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Notepad</title>
+  <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -41,19 +41,16 @@
             height: calc(100vh - 50px);
             box-sizing: border-box;
         }
-    </style>
+  </style>
 </head>
 <body>
+  <div class="toolbar">
+    <button onclick="saveFile()">Save</button> <button onclick="loadFile()">Load</button> <input type="file" id="fileInput" style="display: none;" onchange="handleFile()">
+  </div>
+  <textarea class="editor" id="editor" placeholder="Type your text here..."></textarea> 
+  <script>
 
-    <div class="toolbar">
-        <button onclick="saveFile()">Save</button>
-        <button onclick="loadFile()">Load</button>
-        <input type="file" id="fileInput" style="display: none;" onchange="handleFile()">
-    </div>
 
-    <textarea class="editor" id="editor" placeholder="Type your text here..."></textarea>
-
-    <script>
         function saveFile() {
             const text = document.getElementById('editor').value;
             const blob = new Blob([text], { type: 'text/plain' });
@@ -78,7 +75,6 @@
             };
             reader.readAsText(file);
         }
-    </script>
-
+  </script>
 </body>
 </html>
