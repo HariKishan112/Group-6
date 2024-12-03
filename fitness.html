@@ -2,84 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Notepad</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-            background-color: #f4f4f4;
-        }
-        .toolbar {
-            background-color: #333;
-            color: white;
-            padding: 10px;
-            display: flex;
-            justify-content: space-between;
-        }
-        .toolbar button {
-            background-color: #555;
-            border: none;
-            color: white;
-            padding: 10px;
-            margin: 0 5px;
-            cursor: pointer;
-        }
-        .toolbar button:hover {
-            background-color: #777;
-        }
-        .editor {
-            flex: 1;
-            padding: 10px;
-            border: none;
-            resize: none;
-            width: 100%;
-            height: calc(100vh - 50px);
-            box-sizing: border-box;
-        }
-    </style>
-</head>
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>FIT PULSE</title>
+</head> 
 <body>
+    
 
-    <div class="toolbar">
-        <button onclick="saveFile()">Save</button>
-        <button onclick="loadFile()">Load</button>
-        <input type="file" id="fileInput" style="display: none;" onchange="handleFile()">
-    </div>
 
-    <textarea class="editor" id="editor" placeholder="Type your text here..."></textarea>
+    <header>
+         
+        <a href="#home" class="logo">FIT <span>PULSE</span></a>
 
-    <script>
-        function saveFile() {
-            const text = document.getElementById('editor').value;
-            const blob = new Blob([text], { type: 'text/plain' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'notepad.txt';
-            a.click();
-            URL.revokeObjectURL(url);
-        }
-
-        function loadFile() {
-            document.getElementById('fileInput').click();
-        }
-
-        function handleFile() {
-            const fileInput = document.getElementById('fileInput');
-            const file = fileInput.files[0];
-            const reader = new FileReader();
-            reader.onload = function(event) {
-                document.getElementById('editor').value = event.target.result;
-            };
-            reader.readAsText(file);
-        }
-    </script>
-
-</body>
+        <ul class="navbar">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Home</a></li>
+            <li><a href="#about">Home</a></li>
+            <li><a href="#plans">Home</a></li>
+            <li><a href="#review">Home</a></li>
+        </ul>
+    </header>
+</body>   
 </html>
-
